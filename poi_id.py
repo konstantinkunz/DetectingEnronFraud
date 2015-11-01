@@ -29,7 +29,7 @@ from poi_Classifiers import getkNeighbors
 ########################################################################
 ### Helper functions
 
-    
+
 ########################################################################
 
 ### Task 1: Select what features you'll use.
@@ -52,13 +52,13 @@ financial_features = ['salary',
                      'total_stock_value'
                       ]
 
-                 
+
 email_features = ['to_messages',
                   'from_poi_to_this_person',
                   'shared_receipt_with_poi',
                   'from_messages',
                   'from_this_person_to_poi']
-              
+
 features_list = ['poi'] + financial_features + email_features
 
 # You will need to use more features
@@ -223,11 +223,11 @@ labels_pred = clf.predict(features)
     for different machinelearning algorithms
 """
 
-### achieve better than .3 precision and recall 
+### achieve better than .3 precision and recall
 ### using our testing script. Check the tester.py script in the final project
 ### folder for details on the evaluation method, especially the test_classifier
 ### function. Because of the small size of the dataset, the script uses
-### stratified shuffle split cross validation. For more info: 
+### stratified shuffle split cross validation. For more info:
 ### http://scikit-learn.org/stable/modules/generated/sklearn.cross_validation.StratifiedShuffleSplit.html
 
 ### stratified shuffle splits
@@ -259,7 +259,7 @@ pipelines.append((pipe, params))
 """
 
 ## gridsearch on the classifier parameters
-scores = ['f1', 'recall', 'precision']
+scores = ['f1','recall','precision']
 for score in scores:
     for pipe, params in pipelines:
         clf = grid_search.GridSearchCV(estimator=pipe , param_grid=params,

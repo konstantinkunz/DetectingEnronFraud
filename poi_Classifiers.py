@@ -35,7 +35,7 @@ def getDecisionTree(gridSearch=True):
                   'classifier__min_samples_split':[8],
                   'classifier__max_depth':[None],
                   'classifier__class_weight':[None]}
-        
+
     return pipe, params
 
 def getSVM(gridSearch = True):
@@ -85,4 +85,3 @@ def getkNeighbors(gridSearch = True):
                   'classifier__weights':['distance']}
 
     return pipe, params
-
