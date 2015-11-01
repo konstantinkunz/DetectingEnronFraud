@@ -261,14 +261,12 @@ pipelines.append((pipe, params))
 ## gridsearch on the classifier parameters
 scores = ['f1', 'recall', 'precision']
 for score in scores:
-    print "start gridsearch"
     for pipe, params in pipelines:
         clf = grid_search.GridSearchCV(estimator=pipe , param_grid=params,
                                    cv=sk_fold, scoring=score, verbose=0)
         clf.fit(features, labels)
         print "{0} score: {1}".format(score, clf.best_score_)
-        print "Best estimator:{0}".format(clf.best_estimator_)
-    print "end gridsearch"
+        #print "Best estimator:{0}".format(clf.best_estimator_)
 
 ## print the selected features and their score
 """
